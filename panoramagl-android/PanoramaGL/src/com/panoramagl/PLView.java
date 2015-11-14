@@ -57,6 +57,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -69,7 +70,7 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
-public class PLView extends Activity implements PLIView, SensorEventListener, OnDoubleTapListener
+public class PLView extends AppCompatActivity implements PLIView, SensorEventListener, OnDoubleTapListener
 {
 	/**member variables*/
 	

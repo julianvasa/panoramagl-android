@@ -196,7 +196,7 @@ public class PLJSONLoader extends PLLoaderBase
 		return result;
 	}
 	
-	/**json methods*/
+	/**json_spherical methods*/
 	
 	protected void requestJSON(PLFileDownloaderListener listener)
 	{

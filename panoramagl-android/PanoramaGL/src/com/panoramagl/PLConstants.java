@@ -52,7 +52,7 @@ public class PLConstants
 	/**renderer constants*/
 	
 	public static final int kViewportSize =			kMaxDisplaySize;
-	public static final float kViewportScale = 		5.12f;
+	public static final float kViewportScale = 		2.0f;
 	public static final float kPerspectiveAspect =	1.0f;
 	public static final float kPerspectiveZNear = 	0.01f;
 	public static final float kPerspectiveZFar =	100.0f;
@@ -113,7 +113,7 @@ public class PLConstants
 	
 	public static final float kRotationSensitivityMinValue =	1.0f;
 	public static final float kRotationSensitivityMaxValue =	180.0f;
-	public static final float kDefaultRotationSensitivity =		30.0f;
+	public static final float kDefaultRotationSensitivity =		120.0f;
 	
 	/**fov (field of view) constants*/
 	
@@ -128,7 +128,7 @@ public class PLConstants
 	
 	public static final float kFovSensitivityMinValue =	1.0f;
 	public static final float kFovSensitivityMaxValue =	100.0f;
-	public static final float kDefaultFovSensitivity =	30.0f;
+	public static final float kDefaultFovSensitivity =	80.0f;
 	
 	public static final int kDefaultMinDistanceToEnableFov = 5;
 	
@@ -144,7 +144,7 @@ public class PLConstants
 	
 	/**inertia constants*/
 	
-	public static final int kDefaultInertiaInterval = 3;
+	public static final int kDefaultInertiaInterval = 6;
 	
 	/**accelerometer constants*/
 	

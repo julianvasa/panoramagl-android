@@ -18,7 +18,7 @@
 
 package com.panoramagl.computation;
 
-import android.util.FloatMath;
+import java.lang.Math;
 
 import com.panoramagl.PLConstants;
 import com.panoramagl.ios.structs.CGPoint;
@@ -31,12 +31,12 @@ public class PLMath extends Object
 	
 	public static float distanceBetweenPoints(CGPoint point1, CGPoint point2)
 	{
-		return FloatMath.sqrt(((point2.x - point1.x) * (point2.x - point1.x)) + ((point2.y - point1.y) * (point2.y - point1.y)));
+		return (float)Math.sqrt(((point2.x - point1.x) * (point2.x - point1.x)) + ((point2.y - point1.y) * (point2.y - point1.y)));
 	}
 	
 	public static float distanceBetweenPoints(float x1, float y1, float x2, float y2)
 	{
-		return FloatMath.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+		return (float)Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
 	}
 	
 	/**range methods*/
@@ -105,7 +105,7 @@ public class PLMath extends Object
 		if(result != null)
 		{
 			float pr = (pitch + picthOffset) * PLConstants.kToRadians, yr = (yaw + yawOffset) * PLConstants.kToRadians;
-			result.setValues((radius * FloatMath.sin(pr) * FloatMath.cos(yr)), (radius * FloatMath.sin(pr) * FloatMath.sin(yr)), (radius * FloatMath.cos(pr)));
+			result.setValues((radius * (float)Math.sin(pr) * (float)Math.cos(yr)), (radius * (float)Math.sin(pr) * (float)Math.sin(yr)), (radius * (float)Math.cos(pr)));
 		}
 	}
 }

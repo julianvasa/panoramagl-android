@@ -25,7 +25,7 @@
 
 package com.panoramagl.computation;
 
-import android.util.FloatMath;
+import java.lang.Math;
 
 import com.panoramagl.structs.PLIStruct;
 import com.panoramagl.structs.PLPosition;
@@ -277,31 +277,31 @@ public class PLVector3 implements PLIStruct<PLVector3>
 	{
 		if(newVector3)
 			return this.crossProduct(value);
-		float tempX = y * value.z - z * value.y;
-		float tempY = z * value.x - x * value.z;
+        float tempX = y * value.z - z * value.y;
+        float tempY = z * value.x - x * value.z;
 		z = x * value.y - y * value.x;
 		x = tempX;
 		y = tempY;
 		return this;
 	}
 	
-	public float magnitude()
+	public double magnitude()
 	{
-		return FloatMath.sqrt(x * x + y * y + z * z);
+		return Math.sqrt(x * x + y * y + z * z);
 	}
 	
-	public float distance(PLVector3 value)
+	public double distance(PLVector3 value)
 	{
-		float tempX = x - value.x, tempY = y - value.y, tempZ = z - value.z;
-		return FloatMath.sqrt(tempX * tempX + tempY * tempY + tempZ * tempZ);
+		double tempX = x - value.x, tempY = y - value.y, tempZ = z - value.z;
+		return Math.sqrt(tempX * tempX + tempY * tempY + tempZ * tempZ);
 	}
 	
 	public void normalize()
 	{
-		float magnitude = (x * x + y * y + z * z);
+        double magnitude = (x * x + y * y + z * z);
 		if (magnitude == 0)
 			return;
-		float mult = (1.0f / FloatMath.sqrt(magnitude));            
+        double mult = (1.0f / Math.sqrt(magnitude));
 		x *= mult;
 		y *= mult;
 		z *= mult;

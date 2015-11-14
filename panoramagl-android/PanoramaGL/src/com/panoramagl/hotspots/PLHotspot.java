@@ -24,7 +24,7 @@ import java.util.List;
 
 import javax.microedition.khronos.opengles.GL10;
 
-import android.util.FloatMath;
+import java.lang.Math;
 
 import com.panoramagl.computation.PLVector3;
 import com.panoramagl.enumerations.PLSceneElementTouchStatus;
@@ -329,9 +329,9 @@ public class PLHotspot extends PLSceneElementBase implements PLIHotspot
 	protected PLPosition convertPitchAndYawToPosition(float pitch, float yaw)
 	{
 		float r = this.getZ(), pr = (90.0f - pitch) * PLConstants.kToRadians, yr = -yaw * PLConstants.kToRadians;
-		float x = r * FloatMath.sin(pr) * FloatMath.cos(yr);
-		float y = r * FloatMath.sin(pr) * FloatMath.sin(yr);
-		float z = r * FloatMath.cos(pr);
+		float x = r * (float)Math.sin(pr) * (float)Math.cos(yr);
+		float y = r * (float)Math.sin(pr) * (float)Math.sin(yr);
+		float z = r * (float)Math.cos(pr);
 		return PLPosition.PLPositionMake(y, z, x);
 	}
 	
@@ -350,16 +350,16 @@ public class PLHotspot extends PLSceneElementBase implements PLIHotspot
 		s.normalize();
 		//5.1
 		float w = mWidth * PLConstants.kPanoramaRadius, h = mHeight * PLConstants.kPanoramaRadius;
-		float radius = FloatMath.sqrt((w * w) + (h * h));
+		float radius = (float)Math.sqrt((w * w) + (h * h));
 		//5.2
 		float angle = (float)Math.asin(h / radius);
 		//5.3
 		PLVector3 n = new PLVector3(0.0f, 0.0f, 0.0f);
 		for(float theta : new float[]{ PLConstants.kPI - angle, angle, PLConstants.kPI + angle, 2 * PLConstants.kPI - angle})
 		{
-			n.x = p1.x + (radius * FloatMath.cos(theta) * r.x) + (radius * FloatMath.sin(theta) * s.x);
-			n.y = p1.y + (radius * FloatMath.cos(theta) * r.y) + (radius * FloatMath.sin(theta) * s.y);
-			n.z = p1.z + (radius * FloatMath.cos(theta) * r.z) + (radius * FloatMath.sin(theta) * s.z);
+			n.x = p1.x + (radius * (float)Math.cos(theta) * r.x) + (radius * (float)Math.sin(theta) * s.x);
+			n.y = p1.y + (radius * (float)Math.cos(theta) * r.y) + (radius * (float)Math.sin(theta) * s.y);
+			n.z = p1.z + (radius * (float)Math.cos(theta) * r.z) + (radius * (float)Math.sin(theta) * s.z);
 			n.normalize();
 			result.add(PLPosition.PLPositionMake(n.x, n.y, n.z));
 		}
